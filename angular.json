@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "coronavirus-cases"
+    }
+  },
+  "defaultProject": "coronavirus-cases",
+  "cli": {
+    "analytics": "30d33f40-db20-4667-b2fd-6ae4f8e3618b"
+  }
 }
