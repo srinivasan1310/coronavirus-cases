@@ -1,0 +1,40 @@
+{
+  "api":[
+          {
+          "_id": "5e842d83fde5174be4294221",
+          "name": "Srinivasan",
+          "gender": "Male",
+          "age": 32,
+          "address": "Simmakkal",
+          "city": "Madurai",
+          "country": "India",
+          "status": "Recovered",
+          "updated": "2020-04-01T05:58:27.964Z",
+          "__v": 0
+          },
+          {
+          "_id": "5e8449b69dac0b4ce05f10ae",
+          "name": "Srimathi",
+          "gender": "Female",
+          "age": 52,
+          "address": "Jaihind Puram",
+          "city": "Madurai",
+          "country": "India",
+          "status": "Positive",
+          "updated": "2020-04-01T07:58:46.392Z",
+          "__v": 0
+          },
+          {
+          "_id": "5e84b29af758a040c4aa4cd8",
+          "name": "Raman",
+          "gender": "Male",
+          "age": 28,
+          "address": "Nethaji Road",
+          "city": "Chennai",
+          "country": "India",
+          "status": "Death",
+          "updated": "2020-04-01T15:26:18.806Z",
+          "__v": 0
+          }
+          ]
+  }
