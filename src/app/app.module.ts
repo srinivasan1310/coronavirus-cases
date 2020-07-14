@@ -56,6 +56,12 @@ import { ChartsModule } from 'ng2-charts';
       MatSelectModule,
       ChartsModule,
   ],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
