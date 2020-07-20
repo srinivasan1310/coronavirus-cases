@@ -1,1 +1,46 @@
-<p>cases-details works!</p>
+<div class = "example-container mat-elevation-z3">
+  <!--Header of case details-->
+  <h2>Corona Virus Case Details</h2>
+
+  <!--Loading Spinner-->
+  <div class = "example-loading-shade" *ngIf = "isLoadingResults">
+    <mat-spinner *ngIf = "isLoadingResults"></mat-spinner>
+  </div>
+
+  <!--Navigate back button-->
+  <div class = "button-row">
+    <a mat-flat-button color = "primary" [routerLink] = "['/cases']"><mat-icon>list</mat-icon></a>
+  </div>
+
+  <!--Material Detail Main Div-->
+  <mat-card class = "example-card">
+    <mat-card-header>
+        <mat-card-title><h2>{{cases.name}}</h2></mat-card-title>
+        <mat-card-subtitle><h2>{{cases.age}} years old</h2></mat-card-subtitle>
+    </mat-card-header>
+          <mat-card-content>
+            <dl>
+                <dt>Gender:</dt>
+                <dd>{{cases.gender}}</dd>
+
+                <dt>Address:</dt>
+                <dd>{{cases.address}}</dd>
+
+                <dt>City:</dt>
+                <dd>{{cases.city}}</dd>
+
+                <dt>Country:</dt>
+                <dd>{{cases.country}}</dd>
+
+                <dt>Status:</dt>
+                <dd>{{cases.status}}</dd>
+            </dl>
+          </mat-card-content>
+
+          <!--Edit and Delete Button Added-->
+          <mat-card-actions>
+            <a mat-flat-button color="primary" [routerLink]="['/edit-cases', cases.id]"><mat-icon>edit</mat-icon> Cases</a>
+            <a mat-flat-button color="warn" (click)="deleteCases(cases.id)"><mat-icon>delete</mat-icon> Cases</a>
+          </mat-card-actions>
+  </mat-card>
+</div>

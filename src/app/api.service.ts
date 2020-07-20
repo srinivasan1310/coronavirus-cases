@@ -24,12 +24,38 @@ export class ApiService {
     };
   }
 
+  /* Add Cases */
+  addCases(cases: Cases): Observable<Cases>{
+    return this.http.post<Cases>(apiUrl, cases, httpOptions).pipe(
+      tap((c: Cases) => console.log(`added product w/ id=${c.id}`)),
+      catchError(this.handleError<Cases>('addCases'))
+    );
+  }
+
+  // Get Case List
   getCases(): Observable<Cases[]>{
     console.log('loaded');
     console.log(apiUrl);
     return this.http.get<Cases[]>(`${apiUrl}`).pipe(
       tap(cases => console.log('fetched cases')),
       catchError(this.handleError('getCases', []))
+    );
+  }
+
+  // Get Case Detail By using Id
+  getCasesById(id: string): Observable<Cases> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.get<Cases>(url).pipe(
+      tap(_ => console.log(`fetched cases id=${id}`)),
+      catchError(this.handleError<Cases>(`getCasesById id=${id}`))
+     );
+  }
+
+  deleteCases(id: string): Observable<Cases> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.delete<Cases>(url, httpOptions).pipe(
+      tap(_ => console.log(`deleted cases id=${id}`)),
+      catchError(this.handleError<Cases>('deleteCases'))
     );
   }
 }

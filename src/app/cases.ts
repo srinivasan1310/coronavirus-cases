@@ -1,5 +1,5 @@
 export class Cases {
-  id: string;
+  id: number;
   name: string;
   gender: string;
   age: number;

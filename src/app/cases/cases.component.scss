@@ -22,6 +22,15 @@ table {
   max-width: 360px;
   text-align: center;
 }
+.mat-header-cell{
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.mat-cell{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
  /* Column Widths */
  .mat-column-number,
  .mat-column-state {

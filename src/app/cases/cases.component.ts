@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Cases } from '../cases';
 import { ApiService } from '../api.service';
 
@@ -9,22 +9,20 @@ import { ApiService } from '../api.service';
 })
 export class CasesComponent implements OnInit {
 
-  displayColoumns: string [] = ['_id', 'name', 'age', 'address', 'city', 'country', 'status'];
+  displayedColoumns: string [] = ['name', 'age', 'gender', 'address', 'city', 'country', 'status'];
   data: Cases[] = [];
   isLoadingResults = true;
 
-  constructor(private api: ApiService) {
-    console.log('First loaded');
-  }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    console.log('Second loaded');
-    this.api.getCases().subscribe((res: any) => {
+    this.api.getCases()
+    .subscribe((res: any) => {
       this.data = res;
-      console.log('Response Array *********', this.data);
+      console.log(this.data);
       this.isLoadingResults = false;
     }, err => {
-      console.log('Response Error *********', err);
+      console.log(err);
       this.isLoadingResults = false;
     });
   }
