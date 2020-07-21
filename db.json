@@ -25,16 +25,14 @@
       "__v": 0
     },
     {
-      "id": 4,
-      "name": "Laxman",
+      "name": "Laxman Kumar",
       "gender": "Male",
-      "age": 54,
-      "address": "Yung vang Road",
-      "city": "Salem",
-      "country": "Japan",
-      "status": "Positive",
-      "updated": "2020-04-01T15:26:18.806Z",
-      "__v": 0
+      "age": 64,
+      "address": "Yung vang Street",
+      "city": "Erode",
+      "country": "India",
+      "status": "Recovered",
+      "id": 4
     },
     {
       "id": 5,

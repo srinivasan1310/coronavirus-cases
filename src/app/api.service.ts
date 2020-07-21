@@ -51,6 +51,16 @@ export class ApiService {
      );
   }
 
+  // Update Cases
+  updateCases(id: string, cases: Cases): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.put(url, cases, httpOptions).pipe(
+      tap(_ => console.log(`updated cases id=${id}`)),
+      catchError(this.handleError<any>('updateCases'))
+    );
+  }
+
+  // Delete Cases
   deleteCases(id: string): Observable<Cases> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete<Cases>(url, httpOptions).pipe(
