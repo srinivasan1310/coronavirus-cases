@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import {catchError, tap, map} from 'rxjs/operators';
 import { Cases } from './cases';
+import { Statistic } from './statistic';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -66,6 +67,14 @@ export class ApiService {
     return this.http.delete<Cases>(url, httpOptions).pipe(
       tap(_ => console.log(`deleted cases id=${id}`)),
       catchError(this.handleError<Cases>('deleteCases'))
+    );
+  }
+
+  getStatistic(status: string): Observable<Statistic>{
+    const url = `http://localhost:3000/api/?status=${status}`;
+    return this.http.get<Statistic>(url).pipe(
+      tap(_ => console.log(`fetched statistic status=${status}`)),
+      catchError(this.handleError<Statistic>(`getStatistic status=${status}`))
     );
   }
 }
